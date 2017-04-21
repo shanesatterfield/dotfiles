@@ -1,10 +1,11 @@
-filetype plugin indent on    " required
+" =========================
+" | Color scheme settings |
+" =========================
 
 if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-" Colorschemes
 set background=dark
 colorscheme hybrid
 " colorscheme quantum

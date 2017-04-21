@@ -1,4 +1,7 @@
-" Neomake
+" ===========
+" | Neomake |
+" ===========
+
 " if has('nvim')
 let g:neomake_javascript_jscs_maker = {
     \ 'exe': 'jscs',

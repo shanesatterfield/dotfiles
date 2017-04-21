@@ -1,4 +1,7 @@
-" Haskell Vim Syntax Config
+" =============================
+" | Haskell Vim Syntax Config |
+" =============================
+
 " let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
 " let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
 " let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`

@@ -1,4 +1,7 @@
-" CtrlP
+" =========
+" | CtrlP |
+" =========
+
 let g:ctrlp_map = '<c-p>'
 
 " Setup some default ignores

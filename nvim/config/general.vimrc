@@ -1,4 +1,7 @@
-"========== Vim Settings ==========
+" ================
+" | Vim Settings |
+" ================
+
 syntax on
 filetype plugin indent on
 
@@ -32,7 +35,9 @@ set undolevels=1000
 set relativenumber
 
 
-"========== Mappings ==========
+" ============
+" | Mappings |
+" ============
 
 " Mappings
 let mapleader=","
@@ -63,7 +68,9 @@ set nocompatible " be iMproved, required
 autocmd BufWritePre * :%s/\s\+$//e
 
 
-"========== Filetype Settings ==========
+" =====================
+" | Filetype Settings |
+" =====================
 
 " EJS as HTML
 au BufNewFile,BufRead *.ejs set filetype=html

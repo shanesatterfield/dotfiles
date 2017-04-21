@@ -1,3 +1,7 @@
+" =================
+" | NeoVim Config |
+" =================
+
 " The path to this actual vimrc file even if called through a symlink.
 let s:path = fnamemodify(resolve(expand('<sfile>:p')), ':h')
 

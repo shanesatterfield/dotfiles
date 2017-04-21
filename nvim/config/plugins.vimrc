@@ -2,7 +2,10 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 
-" Shortcuts Plugs
+" ===================
+" | Shortcuts Plugs |
+" ===================
+
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdcommenter'
@@ -15,7 +18,11 @@ Plug 'mattreduce/vim-mix'
 Plug 'paredit.vim'
 Plug 'ervandew/supertab'
 
-" UI Plugs
+
+" ============
+" | UI Plugs |
+" ============
+
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -28,7 +35,11 @@ Plug 'junegunn/vim-github-dashboard'
 Plug 'tpope/vim-fireplace'
 " Plug 'Yggdroot/indentLine'
 
-" Syntax Plugs
+
+" ================
+" | Syntax Plugs |
+" ================
+
 Plug 'groenewege/vim-less'
 Plug 'derekwyatt/vim-scala'
 Plug 'jiangmiao/auto-pairs'
@@ -53,7 +64,11 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'bhurlow/vim-parinfer'
 Plug 'mustache/vim-mustache-handlebars'
 
-" Linters and Autocomplete Plugs
+
+" ==================================
+" | Linters and Autocomplete Plugs |
+" ==================================
+
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shutnik/jshint2.vim'
 Plug 'benekastah/neomake'
@@ -62,7 +77,11 @@ Plug 'sbdchd/neoformat'
 " Plug 'scrooloose/syntastic'
 " Plug 'jshint/jshint'
 
-" Colorscheme Plugs
+
+" =====================
+" | Colorscheme Plugs |
+" =====================
+
 Plug 'nanotech/jellybeans.vim'
 Plug 'tomasr/molokai'
 Plug 'morhetz/gruvbox'
