@@ -1,6 +1,7 @@
+"========== Vim Settings ==========
 syntax on
 filetype plugin indent on
-" set tabstop=4
+
 set showmatch " Shows matching brackets
 set ruler " Always shows location in file (line #)
 set shiftwidth=4
@@ -27,17 +28,11 @@ set incsearch
 set history=1000
 set undolevels=1000
 
-" Relative and absolute line numberings
-" set number " This is for setting the absolute line numberings.
+" Set up relative line numbers
 set relativenumber
 
-" Absolute line numbers only when vim is in focus.
-au FocusLost * set number
-au FocusGained * set relativenumber
 
-" Relative numbers in Normal mode and Absolute in Insert mode.
-autocmd InsertEnter * set number
-autocmd InsertLeave * set relativenumber
+"========== Mappings ==========
 
 " Mappings
 let mapleader=","
@@ -53,7 +48,7 @@ nnoremap ; :
 " Removes highlighting after a search
 nmap <silent> ,/ :nohlsearch<CR>
 
-"Easy windowd navigation
+" Easy windowd navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -62,20 +57,13 @@ map <C-l> <C-w>l
 " Yank until end of line
 map Y y$
 
-if $COLORTERM == 'gnome-terminal'
-        set t_Co=256
-endif
-
-set t_Co=256
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" PostgreSQL
-let g:sql_type_default = 'pgsql'
+set nocompatible " be iMproved, required
 
 " Whitespace Remover
 autocmd BufWritePre * :%s/\s\+$//e
+
+
+"========== Filetype Settings ==========
 
 " EJS as HTML
 au BufNewFile,BufRead *.ejs set filetype=html

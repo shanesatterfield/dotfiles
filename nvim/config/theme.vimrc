@@ -1,8 +1,10 @@
 filetype plugin indent on    " required
 
+if $COLORTERM == 'gnome-terminal'
+    set t_Co=256
+endif
+
 " Colorschemes
-syntax enable
-set t_Co=256
 set background=dark
 colorscheme hybrid
 " colorscheme quantum
@@ -10,4 +12,3 @@ colorscheme hybrid
 " colorscheme OceanicNext
 " colorscheme molokai
 " colorscheme gruvbox
-syntax on
