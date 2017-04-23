@@ -17,6 +17,7 @@ Plug 'tpope/vim-repeat'
 Plug 'mattreduce/vim-mix'
 Plug 'paredit.vim'
 Plug 'ervandew/supertab'
+Plug 'junegunn/vim-easy-align'
 
 
 " ============
