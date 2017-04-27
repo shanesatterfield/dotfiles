@@ -3,8 +3,13 @@
 # Get path to the physical file, following symlinks if need be.
 SRC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Install ansible
+sudo apt-add-repository -y ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+
 # Run install script
-source $SRC_DIR/install.sh
+sudo ansible-playbook -i "localhost," -c local $SRC_DIR/ansible/install.yml
 
 function link() {
     MSG=$1
