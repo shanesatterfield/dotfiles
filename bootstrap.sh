@@ -9,7 +9,7 @@ sudo apt-get update
 sudo apt-get install ansible
 
 # Run install script
-sudo ansible-playbook -i "localhost," -c local $SRC_DIR/ansible/install.yml
+sudo ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install.yml
 
 function link() {
     MSG=$1
@@ -31,9 +31,9 @@ function link() {
 }
 
 # Create symlinks to dotfiles
-link "NeoVim"  $SRC_DIR/nvim/init.vim  ~/.config/nvim/init.vim
-link "Vim"     $SRC_DIR/nvim/init.vim  ~/.vimrc
-link "IdeaVim" $SRC_DIR/nvim/init.vim  ~/.ideavimrc
+link "NeoVim"  $SRC_DIR/nvim/init.vim             ~/.config/nvim/init.vim
+link "Vim"     $SRC_DIR/nvim/init.vim             ~/.vimrc
+link "IdeaVim" $SRC_DIR/nvim/config/general.vimrc ~/.ideavimrc
 
-link "Zsh"     $SRC_DIR/zsh/zshrc      ~/.zshrc
-link "Tmux"    $SRC_DIR/tmux/tmux.conf ~/.tmux.conf
+link "Zsh"     $SRC_DIR/zsh/zshrc                 ~/.zshrc
+link "Tmux"    $SRC_DIR/tmux/tmux.conf            ~/.tmux.conf
