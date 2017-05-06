@@ -21,6 +21,7 @@
         - xclip
         - powerline
         - curl
+        - tree
         - git
         - tmux
         - neovim
