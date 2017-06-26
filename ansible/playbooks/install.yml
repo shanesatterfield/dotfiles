@@ -1,18 +1,22 @@
 ---
 - hosts: all
-  become: yes
-  become_method: sudo
   tasks:
     - name: Add PPAs
+      become: yes
+      become_method: sudo
       apt_repository:
         repo: 'ppa:neovim-ppa/stable'
 
     - name: Update cache
+      become: yes
+      become_method: sudo
       apt:
         update_cache: yes
         state: present
 
     - name: Install base pacakges
+      become: yes
+      become_method: sudo
       apt: name={{item}} state=present
       with_items:
         - openjdk-8-jdk
@@ -37,9 +41,21 @@
         repo: 'https://github.com/tmux-plugins/tpm'
         dest: ~/.tmux/plugins/tpm
 
+    - name: Set up node_modules global cache.
+      shell: mkdir -p ~/.npm-global && chown -R $(whoami) ~/.npm-global
+
     - name: Update Node and Npm
       shell: npm install -g npm && npm install -g n && n stable
+      environment:
+        NPM_CONFIG_PREFIX: ~/.npm-global
+
+    - name: Install node packages
+      shell: npm i -g elm
+      environment:
+        NPM_CONFIG_PREFIX: ~/.npm-global
 
     - name: Autoremove
+      become: yes
+      become_method: sudo
       apt:
         autoremove: yes

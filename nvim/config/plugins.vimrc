@@ -15,7 +15,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'Tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
 Plug 'mattreduce/vim-mix'
-Plug 'paredit.vim'
+" Plug 'paredit.vim' " This is deprecated because it's from vim-scripts.
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
 
@@ -64,6 +64,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'lifepillar/pgsql.vim'
 Plug 'bhurlow/vim-parinfer'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'elmcast/elm-vim'
 
 
 " ==================================
