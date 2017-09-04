@@ -1,11 +1,17 @@
 ---
 - hosts: all
   tasks:
-    - name: Add PPAs
+    - name: Add NeoVim PPA
       become: yes
       become_method: sudo
       apt_repository:
         repo: 'ppa:neovim-ppa/stable'
+
+    - name: Add Numix PPA
+      become: yes
+      become_method: sudo
+      apt_repository:
+        repo: 'ppa:numix/ppa'
 
     - name: Update cache
       become: yes
@@ -28,7 +34,9 @@
         - tree
         - git
         - tmux
+        - zsh
         - neovim
+        - numix-gtk-theme
         - nodejs-legacy
         - npm
 
@@ -41,8 +49,21 @@
         repo: 'https://github.com/tmux-plugins/tpm'
         dest: ~/.tmux/plugins/tpm
 
+    - name: Install Oh My ZSH
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+      become: yes
+      become_method: sudo
+
+    - name: Download bullet train ZSH theme
+      shell: curl -o ~/.oh-my-zsh/themes/bullet-train.zsh-theme https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
+
+    - name: Enable ZSH
+      shell: chsh -s $(which zsh)
+      become: yes
+      become_method: sudo
+
     - name: Set up node_modules global cache.
-      shell: mkdir -p ~/.npm-global && chown -R $(whoami) ~/.npm-global
+      shell: mkdir -p ~/.npm-global && chown -R $(whoami) ~/.npm-global && chown -R $(whoami) ~/.npm
 
     - name: Update Node and Npm
       shell: npm install -g npm && npm install -g n && n stable
