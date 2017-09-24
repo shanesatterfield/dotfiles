@@ -13,6 +13,18 @@
       apt_repository:
         repo: 'ppa:numix/ppa'
 
+    - name: Add Inkscape PPA
+      become: yes
+      become_method: sudo
+      apt_repository:
+        repo: 'ppa:inkscape.dev/stable'
+
+    - name: Add gimp PPA
+      become: yes
+      become_method: sudo
+      apt_repository:
+        repo: ppa:otto-kesselgulasch/gimp
+
     - name: Update cache
       become: yes
       become_method: sudo
@@ -39,6 +51,8 @@
         - numix-gtk-theme
         - nodejs-legacy
         - npm
+        - inkscape
+        - gimp
 
     - name: Install Vim-Plug
       shell: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -51,29 +65,44 @@
 
     - name: Install Oh My ZSH
       shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-      become: yes
-      become_method: sudo
 
     - name: Download bullet train ZSH theme
-      shell: curl -o ~/.oh-my-zsh/themes/bullet-train.zsh-theme https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
+      shell: curl -so ~/.oh-my-zsh/themes/bullet-train.zsh-theme https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
 
     - name: Enable ZSH
       shell: chsh -s $(which zsh)
       become: yes
       become_method: sudo
 
-    - name: Set up node_modules global cache.
-      shell: mkdir -p ~/.npm-global && chown -R $(whoami) ~/.npm-global && chown -R $(whoami) ~/.npm
+    # - name: Set up node_modules global cache.
+      # file:
+        # path: ~/.npm-global
+        # state: directory
+
+    - name: Set NPM prefix
+      shell: npm config set prefix '~/.npm-global'
+
+    # - name: Change owner of NPM global cache
+      # shell: chown -R $(whoami) ~/.npm-global
 
     - name: Update Node and Npm
       shell: npm install -g npm && npm install -g n && n stable
-      environment:
-        NPM_CONFIG_PREFIX: ~/.npm-global
+      become: yes
+      become_method: sudo
+      # environment:
+        # NPM_CONFIG_PREFIX: ~/.npm-global
 
-    - name: Install node packages
-      shell: npm i -g elm
-      environment:
-        NPM_CONFIG_PREFIX: ~/.npm-global
+
+
+    - name: Install elm packages
+      npm:
+        name: elm
+        global: yes
+
+    - name: Install yarn packages
+      npm:
+        name: yarn
+        global: yes
 
     - name: Autoremove
       become: yes
