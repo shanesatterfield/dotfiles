@@ -1,0 +1,103 @@
+---
+- name: Add NeoVim PPA
+  become: yes
+  become_method: sudo
+  apt_repository:
+    repo: 'ppa:neovim-ppa/stable'
+
+- name: Add Numix PPA
+  become: yes
+  become_method: sudo
+  apt_repository:
+    repo: 'ppa:numix/ppa'
+
+- name: Add gimp PPA
+  become: yes
+  become_method: sudo
+  apt_repository:
+    repo: ppa:otto-kesselgulasch/gimp
+
+- name: Update cache
+  become: yes
+  become_method: sudo
+  apt:
+    update_cache: yes
+    state: present
+
+- name: Install base pacakges
+  become: yes
+  become_method: sudo
+  apt: name={{item}} state=present
+  with_items:
+    - openjdk-8-jdk
+    - gradle
+    - postgresql
+    - xclip
+    - powerline
+    - curl
+    - tree
+    - git
+    - tmux
+    - zsh
+    - neovim
+    - numix-gtk-theme
+    - nodejs-legacy
+    - npm
+    - inkscape
+    - gimp
+
+- name: Install Vim-Plug
+  shell: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+- name: Install Tmux plugin manager (tpm)
+  git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: ~/.tmux/plugins/tpm
+
+- name: Install Oh My ZSH
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+- name: Download bullet train ZSH theme
+  shell: curl -so ~/.oh-my-zsh/themes/bullet-train.zsh-theme https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
+
+- name: Enable ZSH
+  shell: chsh -s $(which zsh)
+  become: yes
+  become_method: sudo
+
+# - name: Set up node_modules global cache.
+  # file:
+    # path: ~/.npm-global
+    # state: directory
+
+- name: Set NPM prefix
+  shell: npm config set prefix '~/.npm-global'
+
+# - name: Change owner of NPM global cache
+  # shell: chown -R $(whoami) ~/.npm-global
+
+- name: Update Node and Npm
+  shell: npm install -g npm && npm install -g n && n stable
+  become: yes
+  become_method: sudo
+  # environment:
+    # NPM_CONFIG_PREFIX: ~/.npm-global
+
+
+
+- name: Install elm packages
+  npm:
+    name: elm
+    global: yes
+
+- name: Install yarn packages
+  npm:
+    name: yarn
+    global: yes
+
+- name: Autoremove
+  become: yes
+  become_method: sudo
+  apt:
+    autoremove: yes

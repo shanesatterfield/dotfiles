@@ -1,0 +1,18 @@
+---
+- name: Add Inkscape PPA
+  become: yes
+  become_method: sudo
+  apt_repository:
+    repo: 'ppa:inkscape.dev/stable'
+
+- name: Update cache
+  become: yes
+  become_method: sudo
+  apt:
+    update_cache: yes
+    state: present
+
+- name: Install base pacakges
+  become: yes
+  become_method: sudo
+  apt: name=inkscape state=present
