@@ -86,10 +86,12 @@
 
 
 
-- name: Install elm packages
-  npm:
-    name: elm
-    global: yes
+- name: Install NPM packages
+  npm: name={{item}} global=yes
+  with_items:
+    - elm
+    - yarn
+    - create-react-app
 
 - name: Install yarn packages
   npm:
