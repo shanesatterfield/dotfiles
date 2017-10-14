@@ -90,6 +90,8 @@
   npm: name={{item}} global=yes
   with_items:
     - elm
+    - elm-test
+    - elm-oracle
     - yarn
     - create-react-app
 

@@ -2,7 +2,7 @@
 " | NERDTree |
 " ============
 
-let NERDTreeIgnore = ['\.pyc$','\.class$','\.o$']
+let NERDTreeIgnore = ['\.pyc$', '\.class$', '\.o$', '__pycache__']
 let NERDTreeShowLineNumbers=1
 autocmd FileType nerdtree setlocal relativenumber
 
