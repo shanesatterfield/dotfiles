@@ -50,7 +50,7 @@
         NPM_CONFIG_PREFIX: ~/.npm-global
 
     - name: Install node packages
-      shell: npm i -g elm
+      shell: npm i -g elm elm-test elm-oracle
       environment:
         NPM_CONFIG_PREFIX: ~/.npm-global
 

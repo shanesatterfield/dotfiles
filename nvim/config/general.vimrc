@@ -76,7 +76,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 au BufNewFile,BufRead *.ejs set filetype=html
 
 " Tabs per file
-autocmd Filetype elm setlocal ts=2 sw=2 expandtab
+" autocmd Filetype elm setlocal ts=2 sw=2 expandtab
+autocmd Filetype haskell setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
 autocmd Filetype json setlocal ts=2 sw=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
