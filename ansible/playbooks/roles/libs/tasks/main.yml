@@ -45,6 +45,12 @@
     - npm
     - inkscape
     - gimp
+    - fonts-inconsolata
+
+- name: Update font cache
+  become: yes
+  become_method: sudo
+  shell: fc-cache -fv
 
 - name: Install Vim-Plug
   shell: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
