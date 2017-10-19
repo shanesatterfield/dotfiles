@@ -65,6 +65,7 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'bhurlow/vim-parinfer'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'elmcast/elm-vim'
+Plug 'udalov/kotlin-vim'
 
 
 " ==================================

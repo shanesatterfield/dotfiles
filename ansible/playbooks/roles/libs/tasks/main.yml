@@ -38,6 +38,7 @@
     - nodejs-legacy
     - npm
     - fonts-inconsolata
+    - golang-go
 
 - name: Update font cache
   become: yes
