@@ -11,12 +11,6 @@
   apt_repository:
     repo: 'ppa:numix/ppa'
 
-- name: Add gimp PPA
-  become: yes
-  become_method: sudo
-  apt_repository:
-    repo: ppa:otto-kesselgulasch/gimp
-
 - name: Update cache
   become: yes
   become_method: sudo
@@ -43,8 +37,6 @@
     - numix-gtk-theme
     - nodejs-legacy
     - npm
-    - inkscape
-    - gimp
     - fonts-inconsolata
 
 - name: Update font cache

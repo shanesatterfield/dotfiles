@@ -1,4 +1,17 @@
 ---
+- name: Add gimp PPA
+  become: yes
+  become_method: sudo
+  apt_repository:
+    repo: ppa:otto-kesselgulasch/gimp
+
+- name: Update cache
+  become: yes
+  become_method: sudo
+  apt:
+    update_cache: yes
+    state: present
+
 - name: Install Gimp
   become: yes
   become_method: sudo
