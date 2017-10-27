@@ -103,3 +103,7 @@ PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 
 # redefine prompt_context for hiding user@hostname
 prompt_context () { }
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/shane/.sdkman"
+[[ -s "/home/shane/.sdkman/bin/sdkman-init.sh" ]] && source "/home/shane/.sdkman/bin/sdkman-init.sh"
