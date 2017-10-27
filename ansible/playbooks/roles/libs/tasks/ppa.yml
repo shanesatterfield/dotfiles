@@ -1,0 +1,13 @@
+---
+- name: Add NeoVim PPA
+  become: yes
+  become_method: sudo
+  apt_repository:
+    repo: 'ppa:neovim-ppa/stable'
+
+- name: Add Numix PPA
+  become: yes
+  become_method: sudo
+  apt_repository:
+    repo: 'ppa:numix/ppa'
+

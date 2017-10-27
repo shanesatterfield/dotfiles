@@ -1,0 +1,23 @@
+---
+- name: Install Python3 pacakges
+  become: yes
+  become_method: sudo
+  apt: name={{item}} state=present
+  with_items:
+    - python3.5
+    - python3-pip
+
+# More info here: https://github.com/pyenv/pyenv-installer
+- name: Install pyenv
+  shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+
+# Updates pyenv
+# - name: Update pyenv
+  # shell: pyenv update
+
+- name: Install Pip3 packages
+  become: yes
+  become_method: sudo
+  shell: pip3 install {{item}}
+  with_items:
+    - neovim

@@ -107,3 +107,10 @@ prompt_context () { }
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/shane/.sdkman"
 [[ -s "/home/shane/.sdkman/bin/sdkman-init.sh" ]] && source "/home/shane/.sdkman/bin/sdkman-init.sh"
+
+
+# pyenv from here https://github.com/pyenv/pyenv
+# This helps switch between different versions of python.
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

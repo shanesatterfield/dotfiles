@@ -81,6 +81,16 @@ Plug 'quramy/tsuquyomi'
 " Plug 'scrooloose/syntastic'
 " Plug 'jshint/jshint'
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+Plug 'zchee/deoplete-jedi'
+
 
 " =====================
 " | Colorscheme Plugs |

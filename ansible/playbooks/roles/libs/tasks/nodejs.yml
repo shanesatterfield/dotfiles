@@ -1,0 +1,40 @@
+---
+- name: Install NodeJS pacakges
+  become: yes
+  become_method: sudo
+  apt: name={{item}} state=present
+  with_items:
+    - nodejs-legacy
+    - npm
+
+# - name: Set up node_modules global cache.
+  # file:
+    # path: ~/.npm-global
+    # state: directory
+
+- name: Set NPM prefix
+  shell: npm config set prefix '~/.npm-global'
+
+# - name: Change owner of NPM global cache
+  # shell: chown -R $(whoami) ~/.npm-global
+
+- name: Update Node and Npm
+  shell: npm install -g npm && npm install -g n && n stable
+  become: yes
+  become_method: sudo
+  # environment:
+    # NPM_CONFIG_PREFIX: ~/.npm-global
+
+- name: Install NPM packages
+  npm: name={{item}} global=yes
+  with_items:
+    - elm
+    - elm-test
+    - elm-oracle
+    - yarn
+    - create-react-app
+
+- name: Install yarn packages
+  npm:
+    name: yarn
+    global: yes

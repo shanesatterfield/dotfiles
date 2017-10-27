@@ -1,5 +1,16 @@
 ---
 - hosts: all
+  pre_tasks:
+    - name: Update cache
+      become: yes
+      become_method: sudo
+      apt:
+        update_cache: yes
+        state: present
+
   roles:
     - tools
     - libs
+
+  post_tasks:
+

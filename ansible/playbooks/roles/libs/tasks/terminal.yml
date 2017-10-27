@@ -1,0 +1,38 @@
+---
+- name: Install terminal pacakges
+  become: yes
+  become_method: sudo
+  apt: name={{item}} state=present
+  with_items:
+    - powerline
+    - tmux
+    - zsh
+    - neovim
+    - nodejs-legacy
+    - npm
+    - fonts-inconsolata
+
+- name: Update font cache
+  become: yes
+  become_method: sudo
+  shell: fc-cache -fv
+
+- name: Install Vim-Plug
+  shell: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+- name: Install Tmux plugin manager (tpm)
+  git:
+    repo: 'https://github.com/tmux-plugins/tpm'
+    dest: ~/.tmux/plugins/tpm
+
+- name: Install Oh My ZSH
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+- name: Download bullet train ZSH theme
+  shell: curl -so ~/.oh-my-zsh/themes/bullet-train.zsh-theme https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
+
+- name: Enable ZSH
+  shell: chsh -s $(which zsh)
+  become: yes
+  become_method: sudo
