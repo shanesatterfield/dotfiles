@@ -39,6 +39,7 @@
     - npm
     - fonts-inconsolata
     - golang-go
+    - python3-pip
 
 - name: Update font cache
   become: yes
@@ -98,6 +99,18 @@
   npm:
     name: yarn
     global: yes
+
+# - name: Install Pip libraries
+  # pip: name={{item}} executable=pip-3.5
+  # with_items:
+    # - neovim
+
+- name: Install Pip3 packages
+  become: yes
+  become_method: sudo
+  shell: pip3 install {{item}}
+  with_items:
+    - neovim
 
 - name: Autoremove
   become: yes
