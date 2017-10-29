@@ -89,7 +89,9 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+" Autocomplete for deoplete
 Plug 'zchee/deoplete-jedi'
+Plug 'artur-shaik/vim-javacomplete2'
 
 
 " =====================
