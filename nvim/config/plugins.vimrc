@@ -96,7 +96,6 @@ Plug 'artur-shaik/vim-javacomplete2'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plugin 'w0rp/ale'
 
 
 " =====================
