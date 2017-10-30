@@ -66,6 +66,7 @@ Plug 'bhurlow/vim-parinfer'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'elmcast/elm-vim'
 Plug 'udalov/kotlin-vim'
+Plug 'herringtondarkholme/yats.vim'
 
 
 " ==================================
@@ -92,6 +93,9 @@ endif
 " Autocomplete for deoplete
 Plug 'zchee/deoplete-jedi'
 Plug 'artur-shaik/vim-javacomplete2'
+Plug 'carlitux/deoplete-ternjs'
+Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 
 " =====================

@@ -9,8 +9,5 @@
         state: present
 
   roles:
-    - tools
     - libs
-
-  post_tasks:
-
+    - tools

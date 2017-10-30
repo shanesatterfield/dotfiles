@@ -33,6 +33,8 @@
     - elm-oracle
     - yarn
     - create-react-app
+    - tern
+    - typescript
 
 - name: Install yarn packages
   npm:
