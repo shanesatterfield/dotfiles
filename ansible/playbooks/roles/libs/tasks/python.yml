@@ -11,6 +11,12 @@
 - name: Install pyenv
   shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 
+- name: Install latest python version
+  shell: pyenv install 3.6.3 -s
+
+- name: Set global system python version
+  shell: pyenv global 3.6.3
+
 # Updates pyenv
 # - name: Update pyenv
   # shell: pyenv update
@@ -18,7 +24,7 @@
 - name: Install Pip3 packages
   become: yes
   become_method: sudo
-  shell: pip3 install {{item}}
+  shell: pip install {{item}}
   with_items:
     - neovim
     - flake8

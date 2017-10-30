@@ -8,8 +8,6 @@
     - tmux
     - zsh
     - neovim
-    - nodejs-legacy
-    - npm
     - fonts-inconsolata
 
 - name: Update font cache
