@@ -20,7 +20,7 @@
   # shell: chown -R $(whoami) ~/.npm-global
 
 - name: Update Node and Npm
-  shell: npm install -g npm && npm install -g n && n stable
+  shell: npm install -g npm && npm install -g n && n {{ nodejs_version }}
   become: yes
   become_method: sudo
   # environment:

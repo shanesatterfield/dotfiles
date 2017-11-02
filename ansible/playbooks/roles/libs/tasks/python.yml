@@ -6,25 +6,26 @@
   with_items:
     - python3.5
     - python3-pip
+    - python3-dev
 
 # More info here: https://github.com/pyenv/pyenv-installer
 - name: Install pyenv
   shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 
 - name: Install latest python version
-  shell: pyenv install 3.6.3 -s
+  shell: pyenv install {{ python_3_version }} -s
 
 - name: Set global system python version
-  shell: pyenv global 3.6.3
+  shell: pyenv global {{ python_3_version }}
 
 # Updates pyenv
-# - name: Update pyenv
-  # shell: pyenv update
+- name: Update pyenv
+  shell: pyenv update
 
 - name: Install Pip3 packages
   become: yes
   become_method: sudo
-  shell: pip install {{item}}
+  pip: name={{item}} state=latest executable=/home/shane/.pyenv/shims/pip
   with_items:
     - neovim
     - flake8

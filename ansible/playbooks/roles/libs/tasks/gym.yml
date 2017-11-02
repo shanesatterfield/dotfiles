@@ -1,0 +1,16 @@
+---
+- name: Install OpenAI Gym dependencies
+  become: yes
+  become_method: sudo
+  apt: name={{item}} state=present
+  with_items:
+    - cmake
+    - zlib1g-dev
+    - libjpeg-dev
+    - xvfb
+    - libav-tools
+    - xorg-dev
+    - libboost-all-dev
+    - libsdl2-dev
+    - swig
+

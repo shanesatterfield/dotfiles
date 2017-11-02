@@ -1,0 +1,10 @@
+---
+- name: Install C++ packages
+  become: yes
+  become_method: sudo
+  apt: name={{item}} state=present
+  with_items:
+    - gcc
+    - cmake
+    - libboost-all-dev
+    - libsdl2-dev

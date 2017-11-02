@@ -22,9 +22,11 @@
     - fonts-inconsolata
     - golang-go
 
+- import_tasks: cpp.yml
 - import_tasks: terminal.yml
 - import_tasks: nodejs.yml
 - import_tasks: python.yml
+- import_tasks: gym.yml
 
 - name: Autoremove
   become: yes

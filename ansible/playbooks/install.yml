@@ -11,3 +11,7 @@
   roles:
     - libs
     - tools
+
+  vars:
+    python_3_version: 3.6.3
+    nodejs_version: 8.8.1
