@@ -6,8 +6,8 @@ let g:ctrlp_map = '<c-p>'
 
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](\.(git|hg|svn|gradle|idea)|\_site|node_modules|bower_components|build|out|dist|target|)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+  \ 'dir':  '\v[\/](\.(git|hg|svn|gradle|idea)|\_site|node_modules|bower_components|build|out|dist|target|env)$',
+  \ 'file': '\v\.(exe|so|dll|class|o|pyc|png|jpg|jpeg)$',
 \}
 
 " Use the nearest .git directory as the cwd
