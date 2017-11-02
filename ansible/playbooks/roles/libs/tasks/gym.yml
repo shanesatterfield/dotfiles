@@ -13,4 +13,4 @@
     - libboost-all-dev
     - libsdl2-dev
     - swig
-    - python3-pygame
+    - python-pygame
