@@ -33,6 +33,7 @@
     - elm-test
     - elm-oracle
     - yarn
+    - create-elm-app
     - create-react-app
     - tern
     - typescript
