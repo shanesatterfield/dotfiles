@@ -50,6 +50,10 @@ vno v <esc>
 nnoremap ; :
 :inoremap <S-CR> <Esc>
 
+" Move to the start and end of line easier.
+nnoremap L $
+nnoremap H ^
+
 " Removes highlighting after a search
 nmap <silent> ,/ :nohlsearch<CR>
 
