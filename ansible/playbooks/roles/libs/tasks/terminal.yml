@@ -8,7 +8,8 @@
     - tmux
     - zsh
     - neovim
-    - fonts-inconsolata
+    - fonts-inconsolata # Font for terminal.
+    - dconf-tools # Tool for keyboard mappings.
 
 - name: Update font cache
   become: yes
@@ -34,3 +35,6 @@
   shell: chsh -s $(which zsh)
   become: yes
   become_method: sudo
+
+- name: System wide mapping Capslock to Esc
+  shell: dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
