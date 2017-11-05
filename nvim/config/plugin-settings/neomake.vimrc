@@ -32,6 +32,14 @@ let g:neomake_make_maker = {
     " \ }
 let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'vulture']
 
+function! neomake#makers#ft#python#vulture() abort
+     return {
+         \ 'append_file': 0,
+         \ 'args': ['%:p:h'],
+         \ 'errorformat': '%f:%l: %m',
+         \ }
+ endfunction
+
 let g:neomake_javascript_enabled_makers = ['jscs']
 let g:neomake_jsx_enabled_makers = g:neomake_javascript_enabled_makers
 let g:neomake_java_enabled_makers = ['gradle']
