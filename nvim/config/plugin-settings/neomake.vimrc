@@ -3,9 +3,9 @@
 " ===========
 
 " When reading a buffer (after 1s), and when writing.
-call neomake#configure#automake('nirw', 2000)
+call neomake#configure#automake('nrw', 1000)
 
-let g:neomake_open_list = 2
+" let g:neomake_open_list = 2 " Automatically opens the errors window.
 
 " if has('nvim')
 let g:neomake_javascript_jscs_maker = {
