@@ -37,4 +37,4 @@
   become_method: sudo
 
 - name: System wide mapping Capslock to Esc
-  shell: dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
+  shell: dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:caps']"
