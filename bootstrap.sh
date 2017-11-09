@@ -3,6 +3,9 @@
 # Get path to the physical file, following symlinks if need be.
 SRC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# Make sure software-properties-common is installed so you can run apt-add-repository.
+sudo apt-get install -y software-properties-common
+
 # Install ansible
 sudo apt-add-repository -y ppa:ansible/ansible
 sudo apt-get update
