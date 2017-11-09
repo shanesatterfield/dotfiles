@@ -1,0 +1,21 @@
+---
+- hosts: rpi
+  pre_tasks:
+    - name: Update cache
+      become: yes
+      become_method: sudo
+      apt:
+        update_cache: yes
+        state: present
+
+  roles:
+    - libs
+    - terminal
+    - nodejs
+    - python
+    - gym
+    - tools
+
+  vars:
+    python_3_version: 3.6.3
+    nodejs_version: 8.8.1
