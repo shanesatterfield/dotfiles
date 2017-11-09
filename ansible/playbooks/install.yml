@@ -10,6 +10,11 @@
 
   roles:
     - libs
+    - ppa
+    - terminal
+    - nodejs
+    - python
+    - gym
     - tools
 
   vars:
