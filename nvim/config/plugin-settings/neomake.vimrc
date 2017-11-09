@@ -3,7 +3,7 @@
 " ===========
 
 " When reading a buffer (after 1s), and when writing.
-call neomake#configure#automake('nrw', 1000)
+call neomake#configure#automake('nrw', 100)
 
 " let g:neomake_open_list = 2 " Automatically opens the errors window.
 
