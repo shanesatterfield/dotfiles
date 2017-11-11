@@ -11,7 +11,7 @@
   roles:
     - libs
     - terminal
-    - nodejs
+    # - nodejs
     - python
     - gym
     - tools

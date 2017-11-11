@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/shane/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Initialize things
 # alias tmux="tmux -2"
@@ -106,7 +106,7 @@ prompt_context () { }
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/shane/.sdkman"
-[[ -s "/home/shane/.sdkman/bin/sdkman-init.sh" ]] && source "/home/shane/.sdkman/bin/sdkman-init.sh"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 
 
 # pyenv from here https://github.com/pyenv/pyenv

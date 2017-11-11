@@ -10,7 +10,7 @@
 
 # More info here: https://github.com/pyenv/pyenv-installer
 - name: Install pyenv
-  shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+  shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | sh
 
 - name: Install latest python version
   shell: pyenv install {{ python_3_version }} -s
