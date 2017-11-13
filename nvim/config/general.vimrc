@@ -46,7 +46,7 @@ let mapleader=","
 vno v <esc>
 
 " Better normal mode
-:inoremap jk <esc> " Maps jk to the escape key.
+:inoremap jk <esc>
 nnoremap ; :
 :inoremap <S-CR> <Esc>
 
