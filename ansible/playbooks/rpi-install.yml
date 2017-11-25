@@ -9,12 +9,13 @@
         state: present
 
   roles:
+    - ppa
     - libs
-    - terminal
+    # - terminal
     # - nodejs
     - python
-    - gym
-    - tools
+    # - gym
+    # - tools
 
   vars:
     python_3_version: 3.6.3
