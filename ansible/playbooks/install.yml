@@ -18,5 +18,5 @@
     - tools
 
   vars:
-    python_3_version: 3.6.3
+    python_3_version: 3.6.4
     nodejs_version: 8.8.1
