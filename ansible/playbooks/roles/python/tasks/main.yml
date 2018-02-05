@@ -12,15 +12,17 @@
 - name: Install pyenv
   shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | sh
 
+- name: Update pyenv manual
+  shell: cd ~/.pyenv/plugins/python-build/../.. && git pull && cd -
+
+- name: Update pyenv
+  shell: pyenv update
+
 - name: Install latest python version
   shell: pyenv install {{ python_3_version }} -s
 
 - name: Set global system python version
   shell: pyenv global {{ python_3_version }}
-
-# Updates pyenv
-- name: Update pyenv
-  shell: pyenv update
 
 - name: Install Pip3 packages
   become: yes
