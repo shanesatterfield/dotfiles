@@ -4,10 +4,11 @@ export ZSH=~/.oh-my-zsh
 # Initialize things
 # alias tmux="tmux -2"
 if [[ $TERM == xterm ]]; then
-    TERM=xterm-256color;
+    # TERM=xterm-256color;
+    TERM=screen-256color;
 fi
 
-export TERM=xterm-256color;
+export TERM=screen-256color;
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
