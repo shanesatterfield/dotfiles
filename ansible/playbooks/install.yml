@@ -12,6 +12,7 @@
     - libs
     - ppa
     - terminal
+    - docker
     - nodejs
     - python
     - gym

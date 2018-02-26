@@ -1,0 +1,57 @@
+---
+- name: Install Docker packages
+  become: yes
+  become_method: sudo
+  apt: name={{item}} state=present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+
+- name: Add Docker's official GPG key
+  become: yes
+  become_method: sudo
+  shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+
+- name: Add Docker apt repository
+  become: yes
+  become_method: sudo
+  shell: add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+
+- name: Install Docker
+  become: yes
+  become_method: sudo
+  apt:
+    name: docker-ce
+    state: present
+    update_cache: yes
+
+
+- name: Create Docker group
+  become: yes
+  become_method: sudo
+  group:
+    name: docker
+    state: present
+
+- name: Add current user to docker group
+  become: yes
+  become_method: sudo
+  shell: usermod -aG docker $USER
+
+- name: Enable Docker on startup
+  become: yes
+  become_method: sudo
+  shell: systemctl enable docker
+
+
+- name: Install Docker compose
+  become: yes
+  become_method: sudo
+  shell: curl -L https://github.com/docker/compose/releases/download/1.19.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+
+- name: Make Docker compose executable
+  become: yes
+  become_method: sudo
+  shell: chmod +x /usr/local/bin/docker-compose
