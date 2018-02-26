@@ -38,7 +38,11 @@
 - name: Add current user to docker group
   become: yes
   become_method: sudo
-  shell: usermod -aG docker $USER
+  # shell: usermod -aG docker $USER
+  user:
+    name: "{{ lookup('env', 'USER') }}"
+    append: yes
+    groups: docker
 
 - name: Enable Docker on startup
   become: yes
