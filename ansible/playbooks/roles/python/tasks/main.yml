@@ -4,14 +4,14 @@
   become_method: sudo
   apt: name={{item}} state=present
   with_items:
-    - python3.5
+    # - python3.5
     - python3-pip
     - python3-dev
     - libsqlite3-dev
 
 # More info here: https://github.com/pyenv/pyenv-installer
 - name: Install pyenv
-  shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | sh
+  shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 
 - name: Update pyenv manual
   shell: cd ~/.pyenv/plugins/python-build/../.. && git pull && cd -

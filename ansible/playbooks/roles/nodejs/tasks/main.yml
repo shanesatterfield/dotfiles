@@ -5,7 +5,7 @@
   apt: name={{item}} state=present
   with_items:
     - nodejs
-    - nodejs-legacy
+    # - nodejs-legacy
     - npm
 
 # - name: Set up node_modules global cache.

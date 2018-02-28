@@ -16,6 +16,11 @@
   become_method: sudo
   shell: fc-cache -fv
 
+- name: Enable ZSH
+  shell: chsh -s $(which zsh)
+  become: yes
+  become_method: sudo
+
 - name: Install Vim-Plug
   shell: curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -30,8 +35,3 @@
 
 - name: Download bullet train ZSH theme
   shell: curl -so ~/.oh-my-zsh/themes/bullet-train.zsh-theme https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme
-
-- name: Enable ZSH
-  shell: chsh -s $(which zsh)
-  become: yes
-  become_method: sudo
