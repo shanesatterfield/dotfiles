@@ -67,6 +67,7 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'elmcast/elm-vim'
 Plug 'udalov/kotlin-vim'
 Plug 'herringtondarkholme/yats.vim'
+Plug 'posva/vim-vue'
 
 
 " ==================================
