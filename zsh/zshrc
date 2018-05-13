@@ -116,3 +116,4 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="/snap/bin:$PATH"
