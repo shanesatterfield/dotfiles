@@ -1,0 +1,16 @@
+---
+- name: Install the latest Golang
+  become: yes
+  become_method: sudo
+  shell: snap install --classic go
+
+- name: Create golang bin directory
+  file:
+    path: "{{ lookup('env', 'GOBIN') }}"
+    state: directory
+
+- name: Install deps
+  shell: curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+
+- name: Install glide
+  shell: curl https://glide.sh/get | sh

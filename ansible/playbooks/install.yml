@@ -15,6 +15,7 @@
     - docker
     - nodejs
     - python
+    - golang
     - gym
     - tools
 
