@@ -68,6 +68,7 @@ Plug 'elmcast/elm-vim'
 Plug 'udalov/kotlin-vim'
 Plug 'herringtondarkholme/yats.vim'
 Plug 'posva/vim-vue'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
 " ==================================
@@ -91,12 +92,15 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+Plug 'zchee/deoplete-go'
+
 " Autocomplete for deoplete
 Plug 'zchee/deoplete-jedi'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+" Plug 'w0rp/ale'
 
 
 " =====================
