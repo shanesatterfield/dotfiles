@@ -10,6 +10,7 @@
     - neovim
     - fonts-inconsolata # Font for terminal.
     - dconf-tools # Tool for keyboard mappings.
+    - ttf-ancient-fonts # Used for some old unicode characters
 
 - name: Update font cache
   become: yes
