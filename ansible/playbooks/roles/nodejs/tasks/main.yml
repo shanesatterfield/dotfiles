@@ -32,6 +32,7 @@
     - elm
     - elm-test
     - elm-oracle
+    - elm-format
     - yarn
     - create-elm-app
     - create-react-app
