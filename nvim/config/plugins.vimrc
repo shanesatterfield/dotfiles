@@ -69,6 +69,7 @@ Plug 'udalov/kotlin-vim'
 Plug 'herringtondarkholme/yats.vim'
 Plug 'posva/vim-vue'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'udalov/kotlin-vim'
 
 
 " ==================================
@@ -115,6 +116,9 @@ Plug 'tyrannicaltoucan/vim-quantum'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'joshdick/onedark.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'chriskempson/base16-vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'jacoborus/tender.vim'
 " Plug 'yantze/pt_black'
 " Plug 'Lokaltog/vim-distinguished'
 " Plug 'morhetz/gruvbox'
