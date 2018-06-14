@@ -48,6 +48,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'tfnico/vim-gradle'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -99,7 +100,7 @@ Plug 'zchee/deoplete-go'
 Plug 'zchee/deoplete-jedi'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'carlitux/deoplete-ternjs'
-Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
+" Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Plug 'w0rp/ale'
 

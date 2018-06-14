@@ -78,12 +78,16 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " EJS as HTML
 au BufNewFile,BufRead *.ejs set filetype=html
+autocmd BufEnter *.tsx :setlocal filetype=typescript.tsx
 
 " Tabs per file
 " autocmd Filetype elm setlocal ts=2 sw=2 expandtab
 autocmd Filetype haskell setlocal ts=2 sw=2 expandtab
 autocmd Filetype javascript setlocal ts=2 sw=2 expandtab
+autocmd Filetype typescript setlocal ts=2 sw=2 expandtab
+autocmd Filetype typescript.tsx setlocal ts=2 sw=2 expandtab
 autocmd Filetype vue setlocal ts=2 sw=2 expandtab
 autocmd Filetype json setlocal ts=2 sw=2 expandtab
 autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
 autocmd Filetype yml setlocal ts=2 sw=2 expandtab
+
