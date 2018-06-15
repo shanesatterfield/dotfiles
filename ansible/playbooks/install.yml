@@ -12,12 +12,12 @@
     - libs
     - ppa
     - terminal
-    - docker
+    # - docker
     - nodejs
     - python
     - golang
-    - gym
-    - tools
+    # - gym
+    # - tools
 
   vars:
     python_3_version: 3.6.5

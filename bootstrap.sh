@@ -3,17 +3,6 @@
 # Get path to the physical file, following symlinks if need be.
 SRC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Make sure software-properties-common is installed so you can run apt-add-repository.
-sudo apt-get install -y software-properties-common
-
-# Install ansible
-sudo apt-add-repository -y ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
-
-# Run install script
-ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install.yml --ask-sudo-pass
-
 function link() {
     MSG=$1
     SRC_FILE=$2
@@ -43,3 +32,15 @@ link "IdeaVim" $SRC_DIR/nvim/config/general.vimrc ~/.ideavimrc
 
 link "Zsh"     $SRC_DIR/zsh/zshrc                 ~/.zshrc
 link "Tmux"    $SRC_DIR/tmux/tmux.conf            ~/.tmux.conf
+
+
+# Make sure software-properties-common is installed so you can run apt-add-repository.
+sudo apt-get install -y software-properties-common
+
+# Install ansible
+sudo apt-add-repository -y ppa:ansible/ansible
+sudo apt-get update
+sudo apt-get install ansible
+
+# Run install script
+ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install.yml --ask-sudo-pass

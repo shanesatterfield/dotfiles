@@ -17,8 +17,7 @@
     - tree
     - git
     - fonts-inconsolata
-    # - postgresql
-    # - golang-go
+    - zlib1g-dev
 
 - name: Autoremove
   become: yes
