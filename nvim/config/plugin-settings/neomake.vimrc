@@ -3,7 +3,7 @@
 " ===========
 
 " When reading a buffer (after 1s), and when writing.
-call neomake#configure#automake('nrw', 100)
+call neomake#configure#automake('nrw', 0)
 
 " let g:neomake_open_list = 2 " Automatically opens the errors window.
 
@@ -40,7 +40,7 @@ function! neomake#makers#ft#python#vulture() abort
          \ }
  endfunction
 
-let g:neomake_javascript_enabled_makers = ['jscs']
+let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = g:neomake_javascript_enabled_makers
 let g:neomake_java_enabled_makers = ['gradle']
 let g:neomake_haskell_enabled_makers = []
