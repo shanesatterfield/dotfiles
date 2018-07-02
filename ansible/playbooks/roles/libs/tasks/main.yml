@@ -18,6 +18,10 @@
     - git
     - fonts-inconsolata
     - zlib1g-dev
+    - libffi-dev
+    - build-essential
+    - libssl-dev
+    - openssl
 
 - name: Autoremove
   become: yes
