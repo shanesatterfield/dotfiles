@@ -22,6 +22,7 @@
     - build-essential
     - libssl-dev
     - openssl
+    - libopenmpi-dev
 
 - name: Autoremove
   become: yes

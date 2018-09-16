@@ -7,8 +7,8 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-set background=dark
-colorscheme hybrid
+" set background=dark
+" colorscheme hybrid
 
 " colorscheme dracula
 
@@ -32,8 +32,8 @@ colorscheme hybrid
 " let g:onedark_termcolors=256
 " colorscheme onedark
 
-" set background=dark
-" colorscheme PaperColor
+set background=dark
+colorscheme PaperColor
 
 " colorscheme onehalfdark
 " let g:airline_theme='onehalfdark'

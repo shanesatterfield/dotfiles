@@ -98,6 +98,7 @@ Plug 'zchee/deoplete-go'
 
 " Autocomplete for deoplete
 Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'carlitux/deoplete-ternjs'
 " Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
