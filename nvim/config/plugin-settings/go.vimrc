@@ -21,6 +21,9 @@ let g:go_auto_type_info = 1
 let g:go_fmt_command = "goimports"
 let g:go_addtags_transform = "camelcase"
 
+" Temporarily remove warning
+let g:go_version_warning = 0
+
 " Find functions within the same package. Requires ctrlp. Use with ,gt
 au FileType go nmap <leader>gt :GoDeclsDir<cr>
 

@@ -23,6 +23,7 @@
     - libssl-dev
     - openssl
     - libopenmpi-dev
+    - chrome-gnome-shell
 
 - name: Autoremove
   become: yes

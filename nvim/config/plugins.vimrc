@@ -85,6 +85,7 @@ Plug 'quramy/tsuquyomi'
 " Plug 'venantius/vim-cljfmt'
 " Plug 'scrooloose/syntastic'
 " Plug 'jshint/jshint'
+Plug 'ambv/black'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
