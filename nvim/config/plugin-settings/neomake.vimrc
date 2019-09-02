@@ -30,15 +30,15 @@ let g:neomake_make_maker = {
         " \ '%A%f:%l: %t%n %m,' .
         " \ '%-G%.%#',
     " \ }
-let g:neomake_python_enabled_makers = ['flake8', 'pep8', 'vulture']
+let g:neomake_python_enabled_makers = ['flake8', 'pep8']
 
-function! neomake#makers#ft#python#vulture() abort
-     return {
-         \ 'append_file': 0,
-         \ 'args': ['%:p:h'],
-         \ 'errorformat': '%f:%l: %m',
-         \ }
- endfunction
+" function! neomake#makers#ft#python#vulture() abort
+     " return {
+         " \ 'append_file': 0,
+         " \ 'args': ['%:p:h'],
+         " \ 'errorformat': '%f:%l: %m',
+         " \ }
+ " endfunction
 
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = g:neomake_javascript_enabled_makers

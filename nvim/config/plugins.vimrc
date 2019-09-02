@@ -71,6 +71,8 @@ Plug 'herringtondarkholme/yats.vim'
 Plug 'posva/vim-vue'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'udalov/kotlin-vim'
+Plug 'cespare/vim-toml'
+Plug 'rust-lang/rust.vim'
 
 
 " ==================================
@@ -105,6 +107,7 @@ Plug 'carlitux/deoplete-ternjs'
 " Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Plug 'w0rp/ale'
+Plug 'palantir/tslint'
 
 
 " =====================
