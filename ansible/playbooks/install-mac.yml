@@ -1,0 +1,17 @@
+---
+- hosts: all
+  pre_tasks:
+    - name: Update homebrew
+      homebrew:
+      update_homebrew: yes
+      upgrade_all: yes
+
+  roles:
+    - terminal-mac
+    - python-mac
+    - nodejs-mac
+    - docker-mac
+
+  vars:
+    python_3_version: 3.7.0
+    nodejs_version: 10.2.1

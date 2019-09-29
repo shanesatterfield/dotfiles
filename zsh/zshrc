@@ -75,6 +75,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor
 export EDITOR='vim'
+alias vim=nvim
 
 export NPM_CONFIG_PREFIX=~/.npm-global
 PATH=$NPM_CONFIG_PREFIX/bin:$PATH

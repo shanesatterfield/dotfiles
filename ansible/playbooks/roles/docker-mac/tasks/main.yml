@@ -1,0 +1,10 @@
+---
+- name: Install Docker
+  homebrew_cask:
+    name: docker
+    state: present
+
+- name: Install Virtualbox
+  homebrew:
+    name: virtualbox
+    state: present

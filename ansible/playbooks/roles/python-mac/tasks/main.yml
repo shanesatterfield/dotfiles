@@ -1,0 +1,34 @@
+---
+- name: Install Python3 pacakges
+  homebrew:
+    name: python
+    state: present
+
+- name: Pyenv dir
+  stat:
+    path: ~/.pyenv
+  register: pyenv_dir
+
+# More info here: https://github.com/pyenv/pyenv-installer
+- name: Install pyenv
+  shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+  when: not pyenv_dir.stat.exists
+
+- name: Update pyenv manual
+  shell: cd ~/.pyenv/plugins/python-build/../.. && git pull && cd -
+
+- name: Update pyenv
+  shell: pyenv update
+
+- name: Install latest python version
+  shell: pyenv install {{ python_3_version }} -s
+
+- name: Set global system python version
+  shell: pyenv global {{ python_3_version }}
+
+- name: Install Pip3 packages
+  pip: name={{item}} state=latest executable=~/.pyenv/shims/pip
+  with_items:
+    - neovim
+    - flake8
+    - vulture
