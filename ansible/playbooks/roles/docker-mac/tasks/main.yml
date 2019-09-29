@@ -5,6 +5,6 @@
     state: present
 
 - name: Install Virtualbox
-  homebrew:
+  homebrew_cask:
     name: virtualbox
     state: present
