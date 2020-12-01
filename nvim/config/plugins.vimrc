@@ -81,13 +81,13 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Shutnik/jshint2.vim'
-Plug 'benekastah/neomake'
 Plug 'sbdchd/neoformat'
 Plug 'quramy/tsuquyomi'
 " Plug 'venantius/vim-cljfmt'
 " Plug 'scrooloose/syntastic'
 " Plug 'jshint/jshint'
 Plug 'ambv/black'
+Plug 'racer-rust/vim-racer'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -98,6 +98,7 @@ else
 endif
 
 Plug 'zchee/deoplete-go'
+Plug 'dense-analysis/ale'
 
 " Autocomplete for deoplete
 Plug 'zchee/deoplete-jedi'
@@ -106,7 +107,6 @@ Plug 'artur-shaik/vim-javacomplete2'
 Plug 'carlitux/deoplete-ternjs'
 " Plug 'mhartington/nvim-typescript', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-" Plug 'w0rp/ale'
 Plug 'palantir/tslint'
 
 
