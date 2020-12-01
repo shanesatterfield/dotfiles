@@ -3,14 +3,15 @@
   pre_tasks:
     - name: Update homebrew
       homebrew:
-      update_homebrew: yes
-      upgrade_all: yes
+        update_homebrew: yes
+        upgrade_all: yes
 
   roles:
     - terminal-mac
     - python-mac
     - nodejs-mac
     - docker-mac
+    - tools-mac
 
   vars:
     python_3_version: 3.7.0
