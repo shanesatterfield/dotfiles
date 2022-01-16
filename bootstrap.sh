@@ -30,6 +30,8 @@ link "NeoVim"  $SRC_DIR/nvim/init.vim             ~/.config/nvim/init.vim
 link "Vim"     $SRC_DIR/nvim/init.vim             ~/.vimrc
 link "IdeaVim" $SRC_DIR/nvim/config/general.vimrc ~/.ideavimrc
 
+link "CoC"     $SRC_DIR/nvim/coc-settings.json    ~/.config/nvim/coc-settings.json
+
 link "Zsh"     $SRC_DIR/zsh/zshrc                 ~/.zshrc
 link "Tmux"    $SRC_DIR/tmux/tmux.conf            ~/.tmux.conf
 
