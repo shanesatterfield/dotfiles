@@ -50,6 +50,7 @@ Plug 'lifepillar/pgsql.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'cespare/vim-toml'
 Plug 'rust-lang/rust.vim'
+Plug 'elmcast/elm-vim'
 
 
 " ==================================

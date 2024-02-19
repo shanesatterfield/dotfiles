@@ -39,13 +39,19 @@ link "Tmux"    $SRC_DIR/tmux/tmux.conf            ~/.tmux.conf
 # Make sure software-properties-common is installed so you can run apt-add-repository.
 # sudo apt-get install -y software-properties-common
 
-# Install ansible for Ubuntu
-# sudo apt-add-repository -y ppa:ansible/ansible
-# sudo apt-get update
-# sudo apt-get install ansible
-
-# Install ansible for Mac
-brew install ansible
-
 # Run install script
-ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install-mac.yml --ask-sudo-pass
+if [[ $OSTYPE == 'darwin'* ]]; then
+    echo "Installing Mac dependencies"
+
+    # Install ansible for Mac
+    brew install ansible
+
+    ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install-mac.yml --ask-become-pass
+else
+    # Install ansible for Ubuntu
+    sudo apt-add-repository -y ppa:ansible/ansible
+    sudo apt-get update
+    sudo apt-get install ansible
+
+    ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install.yml --ask-become-pass
+fi

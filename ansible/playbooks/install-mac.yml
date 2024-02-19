@@ -14,5 +14,5 @@
     - tools-mac
 
   vars:
-    python_3_version: 3.7.0
-    nodejs_version: 10.2.1
+    python_3_version: 3.10.2
+    nodejs_version: 17.4.0

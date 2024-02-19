@@ -11,7 +11,7 @@
 
 # More info here: https://github.com/pyenv/pyenv-installer
 - name: Install pyenv
-  shell: curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+  shell: curl https://pyenv.run | bash
   when: not pyenv_dir.stat.exists
 
 - name: Update pyenv manual
