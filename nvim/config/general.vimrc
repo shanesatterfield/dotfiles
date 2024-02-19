@@ -71,6 +71,9 @@ set nocompatible " be iMproved, required
 " Whitespace Remover
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Automatically close the preview window when done with autocomplete
+autocmd CompleteDone * pclose
+
 
 " =====================
 " | Filetype Settings |

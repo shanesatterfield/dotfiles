@@ -30,17 +30,28 @@ link "NeoVim"  $SRC_DIR/nvim/init.vim             ~/.config/nvim/init.vim
 link "Vim"     $SRC_DIR/nvim/init.vim             ~/.vimrc
 link "IdeaVim" $SRC_DIR/nvim/config/general.vimrc ~/.ideavimrc
 
+link "CoC"     $SRC_DIR/nvim/coc-settings.json    ~/.config/nvim/coc-settings.json
+
 link "Zsh"     $SRC_DIR/zsh/zshrc                 ~/.zshrc
 link "Tmux"    $SRC_DIR/tmux/tmux.conf            ~/.tmux.conf
 
 
 # Make sure software-properties-common is installed so you can run apt-add-repository.
-sudo apt-get install -y software-properties-common
-
-# Install ansible
-sudo apt-add-repository -y ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
+# sudo apt-get install -y software-properties-common
 
 # Run install script
-ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install.yml --ask-sudo-pass
+if [[ $OSTYPE == 'darwin'* ]]; then
+    echo "Installing Mac dependencies"
+
+    # Install ansible for Mac
+    brew install ansible
+
+    ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install-mac.yml --ask-become-pass
+else
+    # Install ansible for Ubuntu
+    sudo apt-add-repository -y ppa:ansible/ansible
+    sudo apt-get update
+    sudo apt-get install ansible
+
+    ansible-playbook -i $SRC_DIR/ansible/inventory/hosts $SRC_DIR/ansible/playbooks/install.yml --ask-become-pass
+fi

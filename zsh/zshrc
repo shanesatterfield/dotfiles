@@ -3,15 +3,16 @@ export ZSH=~/.oh-my-zsh
 
 # Initialize things
 # alias tmux="tmux -2"
-if [[ $TERM == xterm ]]; then
-    TERM=xterm-256color;
-fi
+# if [[ $TERM == xterm ]]; then
+#    TERM=xterm-256color;
+# fi
 
-export TERM=xterm-256color;
+# export TERM=xterm-256color;
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
-ZSH_THEME="bullet-train"
+# ZSH_THEME="bullet-train"
+ZSH_THEME="robbyrussell"
 
 # Remove the user@hostname by setting the default user.
 DEFAULT_USER="shane"
@@ -45,7 +46,7 @@ HYPHEN_INSENSITIVE="true"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -60,11 +61,12 @@ HYPHEN_INSENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git virtualenv virtualenvwrapper ubuntu tmux tmuxinator tmux-cssh python pylint pyenv postgres pip pep8 npm node jira gulp grunt heroku gradle gnu-utils gitignore git github git-extras git-flow git-flow-avh git-prompt git-hubflow git-remote-branch gitfast emoji docker django dirhistory cp copyfile copydir colorize cabal bower bundler battery)
-plugins=(git ubuntu tmux tmuxinator tmux-cssh python pylint pyenv postgres pip pep8 npm node jira gulp grunt heroku gradle gnu-utils gitignore git github git-extras git-flow git-flow-avh git-prompt git-hubflow git-remote-branch gitfast emoji docker django dirhistory cp copyfile copydir colorize cabal bower bundler battery)
+# plugins=(git ubuntu tmux tmuxinator tmux-cssh python pylint pyenv postgres pip pep8 npm node jira gulp grunt heroku gradle gnu-utils gitignore git github git-extras git-flow git-flow-avh git-prompt git-hubflow git-remote-branch gitfast emoji docker django dirhistory cp copyfile copydir colorize cabal bower bundler battery)
+plugins=(git tmux python pyenv dirhistory colorize battery)
 
 # User configuration
 
-export PATH="/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/jvm/java-8-oracle/bin:/usr/lib/jvm/java-8-oracle/db/bin:/usr/lib/jvm/java-8-oracle/jre/bin:/home/shane/.cabal/bin;"
+export PATH="/usr/local/heroku/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/shane/.cabal/bin;"
 # export MANPATH="/usr/local/man:$MANPATH"
 PATH=$HOME/.cabal/bin:$PATH
 
@@ -75,9 +77,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor
 export EDITOR='vim'
+alias vim=nvim
 
-export NPM_CONFIG_PREFIX=~/.npm-global
-PATH=$NPM_CONFIG_PREFIX/bin:$PATH
+# export NPM_CONFIG_PREFIX=~/.npm-global
+# PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -104,12 +107,12 @@ PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 # redefine prompt_context for hiding user@hostname
 prompt_context () { }
 
-# pyenv from here https://github.com/pyenv/pyenv
-# This helps switch between different versions of python.
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
+# Python Poetry
+export PATH="$HOME/Library/Application Support/pypoetry/venv/bin:$PATH"
 
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/snap/bin:$PATH"
@@ -119,14 +122,32 @@ export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:$HOME/.arkade/bin/
+export PATH=$PATH:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+
+# Mac Xcode developer tools, including Metal
+export PATH=$PATH:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/shane/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# export SDKMAN_DIR="/home/shane/.sdkman"
+# [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/shane/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/shane/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# [[ -f /home/shane/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/shane/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/shane/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/shane/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# [[ -f /home/shane/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /home/shane/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
+# IntelliJ command line launcher
+export PATH="/Applications/IntelliJ IDEA CE.app/Contents/MacOS:$PATH"
+export PATH="/usr/local/opt/libpq/bin:$PATH"
