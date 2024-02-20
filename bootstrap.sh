@@ -22,15 +22,19 @@ function link() {
     echo ""
 }
 
+# Wiping old Neovim config, since everything should be symlinked to here
+rm -r ~/.config/nvim
+
 # Make sure that the nvim config directory exists or else it will blow up the vim config.
 mkdir -p ~/.config/nvim/
 
-# Create symlinks to dotfiles
-link "NeoVim"  $SRC_DIR/nvim/init.vim             ~/.config/nvim/init.vim
-link "Vim"     $SRC_DIR/nvim/init.vim             ~/.vimrc
-link "IdeaVim" $SRC_DIR/nvim/config/general.vimrc ~/.ideavimrc
+# Symlink all (Lazy) Neovim files to the correct system directory
+ln -s $SRC_DIR/nvim/* ~/.config/nvim
+ln -s $SRC_DIR/nvim/**/* ~/.config/nvim
+ln -s $SRC_DIR/nvim/.* ~/.config/nvim
 
-link "CoC"     $SRC_DIR/nvim/coc-settings.json    ~/.config/nvim/coc-settings.json
+# Create symlinks to dotfiles
+link "IdeaVim" $SRC_DIR/nvim/config/general.vimrc ~/.ideavimrc
 
 link "Zsh"     $SRC_DIR/zsh/zshrc                 ~/.zshrc
 link "Tmux"    $SRC_DIR/tmux/tmux.conf            ~/.tmux.conf
